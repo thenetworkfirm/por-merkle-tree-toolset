@@ -1,4 +1,4 @@
-# Proof-of-Reserves Merkle Tree Generator and Verifier (by TNF)
+# Proof-of-Reserves Merkle Tree Generator and Verifier (by The Network Firm)
 
 This ReadMe introduces the background and technical details supporting the Merkle Tree Generator and Verifier tools
 utilized
