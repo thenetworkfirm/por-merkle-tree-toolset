@@ -17,7 +17,7 @@ const HASHING_STRATEGY_1 = (userId, balances) => {
 
 const HASH_STRATEGIES = {
   legacy: HASHING_STRATEGY_1,
-  nextgen: HASHING_STRATEGY_2
+  standard: HASHING_STRATEGY_2
 };
 
 class NonExistingStrategyError extends Error {
