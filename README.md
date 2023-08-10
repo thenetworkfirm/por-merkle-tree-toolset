@@ -68,7 +68,7 @@ Proof-of-Reserves engagement.
 
    ```shell
    docker build -t por-merkle-tree-toolset .
-   docker run --rm -it -v "$(pwd)/source":/app/source -v "$(pwd)/artifacts":/app/artifacts por-merkle-tree-toolset bin/aggregator.js bin/aggregator.js --input 'source/Simple CLE Demo Dataset.csv' --output artifacts/aggregator_output.csv --balanceTo 16  --balanceEntrySeed 5f762343266da862769a15de653747816fe06032c2e90a14da06f7a7caa6da7a --sortBalancedEntries --hashingStrategy nextgen
+   docker run --rm -it -v "$(pwd)/source":/app/source -v "$(pwd)/artifacts":/app/artifacts por-merkle-tree-toolset bin/aggregator.js bin/aggregator.js --input 'source/Simple CLE Demo Dataset.csv' --output artifacts/aggregator_output.csv --balanceTo 16  --balanceEntrySeed 5f762343266da862769a15de653747816fe06032c2e90a14da06f7a7caa6da7a --sortBalancedEntries --hashingStrategy standard
    docker run --rm -it -v "$(pwd)/artifacts":/app/artifacts por-merkle-tree-toolset node --max_old_space_size=12288 bin/merkalizer.js --input artifacts/aggregator_output.csv --output artifacts/extracted_tree.csv```
 
 3) ### Attestation Provider verifies the total user balance and publishes the Merkle Tree and the Merkle Root Hash
@@ -189,7 +189,7 @@ Usage: aggregator [options]
 Options:
   --input <value>             Input filename (default: "input.csv")
   --output <value>            Output filename (default: "output.csv")
-  --hashingStrategy <value>   Hashing strategy (choices: "legacy", "nextgen")
+  --hashingStrategy <value>   Hashing strategy (choices: "legacy", "standard")
   --balanceBy <number>        Number of additional records to balance the tree (default: 0)
   --balanceTo <number>        Expected number of records in the target file. Mutually exclusive with --balanceBy
   --targetLevels <number>     Expected number of levels on the resulting tree. Mutually exclusive with --balanceTo and --balanceBy options
@@ -202,7 +202,7 @@ Options:
 #### Example of invocation
 
 ```shell
-docker run --rm -it -v "$(pwd)/source":/app/source -v "$(pwd)/artifacts":/app/artifacts por-merkle-tree-toolset bin/aggregator.js bin/aggregator.js --input 'source/Simple CLE Demo Dataset.csv' --output artifacts/aggregator_output.csv --balanceTo 16  --balanceEntrySeed 5f762343266da862769a15de653747816fe06032c2e90a14da06f7a7caa6da7a --sortBalancedEntries --hashingStrategy nextgen
+docker run --rm -it -v "$(pwd)/source":/app/source -v "$(pwd)/artifacts":/app/artifacts por-merkle-tree-toolset bin/aggregator.js bin/aggregator.js --input 'source/Simple CLE Demo Dataset.csv' --output artifacts/aggregator_output.csv --balanceTo 16  --balanceEntrySeed 5f762343266da862769a15de653747816fe06032c2e90a14da06f7a7caa6da7a --sortBalancedEntries --hashingStrategy standard
 ```
 
 ### Merkalization Tool
