@@ -50,6 +50,11 @@ async function process({
   let headerline;
 
   await readlines(input, async line => {
+    line = line.replaceAll('\\"', '');
+    line = line.replaceAll('"', '');
+    line = line.replaceAll("\\'", '');
+    line = line.replaceAll("'", '');
+
     readCounter += 1;
     if (readCounter === 1) {
       const columns = lineToColumns(line);
