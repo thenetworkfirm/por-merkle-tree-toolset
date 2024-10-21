@@ -1,6 +1,6 @@
 {
   "name": "por-merkle-tree-toolset",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Toolset for building and verifying merkle trees",
   "main": "index.js",
   "scripts": {
